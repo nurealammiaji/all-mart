@@ -1,6 +1,6 @@
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-bar {
@@ -9,6 +9,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.nav-logo {
+    margin-left: 112px;
+}
+
+.nav-link {
+    margin-right: 97px;
 }
 
 .nav-link a {
