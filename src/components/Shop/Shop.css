@@ -1,0 +1,20 @@
+.shop {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.product-area {
+    margin: 120px 104px;
+}
+
+.cart-area {
+    background-color: #FFE0B3;
+}
+
+.cart-container {
+    margin: 28px 0px 0px 23px;
+}
+
+.cart-info {
+    margin-top: 50px;
+}
