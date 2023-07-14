@@ -16,9 +16,11 @@ const Shop = () => {
                         <p>Tax: </p>
                         <h5>Grand Total: </h5>
                     </div>
-                    <button>Clear Cart</button>
-                    <br />
-                    <button>Review Order</button>
+                    <div className='cart-button'>
+                        <button className='btn-clear-cart'>Clear Cart</button>
+                        <br />
+                        <button className='btn-review-order'>Review Order</button>
+                    </div>
                 </div>
             </div>
         </div>
