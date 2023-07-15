@@ -1,12 +1,12 @@
 import './Cart.css'
 
-const Cart = () => {
+const Cart = (props) => {
     return (
         <div>
                 <div className='cart-container'>
                     <h4>Order Summary</h4>
                     <div className='cart-info'>
-                        <p>Selected Items: </p>
+                        <p>Selected Items: {props.items.length} </p>
                         <p>Total Price: </p>
                         <p>Total Shipping Charge: </p>
                         <p>Tax: </p>
