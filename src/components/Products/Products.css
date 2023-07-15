@@ -1,0 +1,25 @@
+.card {
+    height: 508px;
+    width: 300px;
+    border: 2px solid lightgray;
+    border-radius: 8px;
+    position: relative;
+}
+
+.card-body {
+    margin: 14px;
+}
+
+.card-image {
+    height: 286px;
+    width: 286px;
+}
+
+.card-button button{
+    height: 48px;
+    width: 300px;
+    border-radius: 0px 0px 8px 8px;
+    background-color: #FFE0B3;
+    position: absolute;
+    bottom: 0;
+}
