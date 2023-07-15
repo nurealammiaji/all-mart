@@ -12,7 +12,14 @@
 
 .card-image {
     height: 286px;
-    width: 286px;
+}
+
+.card-image img {
+    width: 100%;
+}
+
+.card-info p {
+    margin: 11px 0px 47px 0px;
 }
 
 .card-button button{
