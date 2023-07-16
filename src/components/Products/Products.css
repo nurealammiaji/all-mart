@@ -19,7 +19,7 @@
 }
 
 .card-info p {
-    margin: 11px 0px 47px 0px;
+    margin: 11px 0px 40px 0px;
 }
 
 .card-button button{
@@ -29,4 +29,8 @@
     background-color: #FFE0B3;
     position: absolute;
     bottom: 0;
+}
+
+.card-button button:hover {
+    background-color: orange;
 }
