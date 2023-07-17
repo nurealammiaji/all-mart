@@ -1,3 +1,4 @@
+import Products from '../Products/Products';
 import './Cart.css';
 
 const Cart = (props) => {
@@ -8,12 +9,16 @@ const Cart = (props) => {
     let shipping = 0;
     let tax = 0;
     let total = 0;
+    let quantity = 0;
 
     for (const item of items) {
-        price = price + item.price;
+        item.quantity = item.quantity || 1;
+        console.log(item.quantity);
+        price = price + item.price * item.quantity;
         shipping = shipping + item.shipping;
         tax = price * 7 / 100;
         total = price + shipping + tax;
+        quantity = quantity + item.quantity;
     }
 
     return (
@@ -21,7 +26,7 @@ const Cart = (props) => {
                 <div className='cart-container'>
                     <h4>Order Summary</h4>
                     <div className='cart-info'>
-                        <p>Selected Items: {items.length}</p>
+                        <p>Selected Items: {quantity}</p>
                         <p>Total Price: ${price}</p>
                         <p>Total Shipping Charge: ${shipping}</p>
                         <p>Tax: ${tax.toFixed(2)}</p>
