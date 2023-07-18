@@ -18,7 +18,7 @@ const Products = (props) => {
                     <p>Price: ${price} </p>
                     <small>Manufacturer: {seller}</small>
                     <br />
-                    <small>Rating: {ratings} Star</small>
+                    <small>Rating: {ratings} Stars</small>
                 </div>
             </div>
             <div className='card-button'>
