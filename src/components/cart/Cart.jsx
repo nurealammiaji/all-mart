@@ -1,4 +1,3 @@
-import Products from '../Products/Products';
 import './Cart.css';
 
 const Cart = (props) => {
@@ -23,21 +22,21 @@ const Cart = (props) => {
 
     return (
         <div>
-                <div className='cart-container'>
-                    <h4>Order Summary</h4>
-                    <div className='cart-info'>
-                        <p>Selected Items: {quantity}</p>
-                        <p>Total Price: ${price}</p>
-                        <p>Total Shipping Charge: ${shipping}</p>
-                        <p>Tax: ${tax.toFixed(2)}</p>
-                        <h5>Grand Total: ${total.toFixed(2)}</h5>
-                    </div>
-                    <div className='cart-button'>
-                        <button className='btn-clear-cart'>Clear Cart</button>
-                        <br />
-                        <button className='btn-review-order'>Review Order</button>
-                    </div>
+            <div className='cart-container'>
+                <h4>Order Summary</h4>
+                <div className='cart-info'>
+                    <p>Selected Items: {quantity}</p>
+                    <p>Total Price: ${price}</p>
+                    <p>Total Shipping Charge: ${shipping}</p>
+                    <p>Tax: ${tax.toFixed(2)}</p>
+                    <h5>Grand Total: ${total.toFixed(2)}</h5>
                 </div>
+                <div className='cart-button'>
+                    <button className='btn-clear-cart'>Clear Cart</button>
+                    <br />
+                    <button className='btn-review-order'>Review Order</button>
+                </div>
+            </div>
         </div>
     );
 };
