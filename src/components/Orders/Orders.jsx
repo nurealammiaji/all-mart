@@ -10,11 +10,11 @@ const Orders = () => {
     const items = useLoaderData();
     const [cart, setCart] = useState(items);
 
-    const itemRemove = (id) => {
-        console.log(id);
-        const remaining = cart.filter(pd => pd.id !== id);
+    const itemRemove = (_id) => {
+        console.log(_id);
+        const remaining = cart.filter(pd => pd._id !== _id);
         setCart(remaining);
-        removeFromDb(id);
+        removeFromDb(_id);
     }
 
     const clearCart = () => {
@@ -27,7 +27,7 @@ const Orders = () => {
             <div className="orders-container">
                 <div className="review-item">
                     {
-                        cart.map(item => <ReviewItem key={item.id} item={item} itemRemove={itemRemove}></ReviewItem>)
+                        cart.map(item => <ReviewItem key={item._id} item={item} itemRemove={itemRemove}></ReviewItem>)
                     }
                 </div>
                 <div className="cart-item">

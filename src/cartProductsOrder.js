@@ -7,10 +7,10 @@ const cartProductsLoader = async () => {
     const storedCart = getShoppingCart();
     const savedCart = [];
 
-    for (const id in storedCart) {
-        const addedProduct = products.find(pd => pd.id === id);
+    for (const _id in storedCart) {
+        const addedProduct = products.find(pd => pd._id === _id);
         if (addedProduct) {
-            const quantity = storedCart[id];
+            const quantity = storedCart[_id];
             addedProduct.quantity = quantity;
             savedCart.push(addedProduct);
         }
