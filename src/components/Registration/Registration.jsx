@@ -1,10 +1,19 @@
 import "./Registration.css";
 import { useContext } from "react";
 import { AuthProvider } from "../../Providers/Providers";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Registration = () => {
 
-    const { registration } = useContext(AuthProvider);
+    const { registration, googleLogin } = useContext(AuthProvider);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location);
+
+    const from = location.state?.from?.pathname || '/';
+    console.log(from);
+
 
     const handleRegistration = (event) => {
         event.preventDefault();
@@ -27,12 +36,24 @@ const Registration = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                form.reset();
+                navigate(from, {replace: true});
             })
             .catch(error => {
                 console.log(error.message);
             })
-            form.reset();
         }
+    }
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(result => {
+                console.log(result);
+                navigate(from, {replace: true});
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     return (
@@ -59,7 +80,7 @@ const Registration = () => {
                     </div>
                     <button className="registration-btn" type="submit">Registration</button>
                     <p className="or">or</p>
-                    <button className="google-btn" type="button">Continue with Google</button>
+                    <button onClick={handleGoogleLogin} className="google-btn" type="button">Continue with Google</button>
                 </form>
             </div>
             <br /><br />
