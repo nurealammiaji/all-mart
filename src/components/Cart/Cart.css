@@ -1,0 +1,36 @@
+.cart-container {
+    width: auto;
+    padding: 28px 23px;
+    background-color: #FFE0B3;
+    position: sticky;
+}
+
+.cart-info {
+    margin-top: 50px;
+}
+
+.cart-info p {
+    margin-bottom: 25px;
+}
+
+.cart-button {
+    margin-top: 57px;
+}
+
+.cart-button button {
+    margin-bottom: 16px;
+}
+
+.btn-clear-cart {
+    min-width: 180px;
+    height: 48px;
+    color: white;
+    background-color: #FF3030;
+}
+
+.btn-review-order {
+    min-width: 180px;
+    height: 48px;
+    color: white;
+    background-color: #FF9900;
+}

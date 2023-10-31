@@ -4,15 +4,16 @@
 }
 
 .product-area {
-    margin: 120px 104px;
+    margin: 108px 50px;
 }
 
 .cart-area {
     background-color: #FFE0B3;
+    width: auto;
 }
 
 .product-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 45px;
+    gap: 25px;
 }

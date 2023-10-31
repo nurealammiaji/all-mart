@@ -12,15 +12,24 @@
 }
 
 .nav-logo {
-    margin-left: 112px;
+    margin-left: 45px;
 }
 
 .nav-link {
-    margin-right: 97px;
+    margin-right: 45px;
 }
 
 .nav-link a {
     text-decoration: none;
     color: white;
     margin-left: 32px;
+}
+
+.nav-link small {
+    margin-left: 32px;
+    color: white;
+}
+
+.nav-link button {
+    margin-left: 8px;
 }

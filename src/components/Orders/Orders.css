@@ -1,0 +1,16 @@
+.orders-container {
+    margin: 50px 150px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.review-item {
+    width: 500px;
+}
+
+.review-btn {
+    min-width: 180px;
+    height: 48px;
+    color: white;
+    background-color: #FF9900;
+}
