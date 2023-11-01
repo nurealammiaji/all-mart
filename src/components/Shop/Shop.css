@@ -17,3 +17,31 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
+
+.pagination {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.pagination-btn {
+    font-size: large;
+    padding: 10px;
+    margin: 4px;
+}
+
+.pagination-btn:hover {
+    background-color: orange;
+}
+
+.page-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selected {
+    background-color: orange;
+    font-size: large;
+    padding: 10px;
+    margin: 4px;
+}
