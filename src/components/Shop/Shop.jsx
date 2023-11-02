@@ -10,14 +10,25 @@ const Shop = () => {
 
     const [products, setProducts] = useState([]);
     const [items, setItems] = useState([]);
-    const [currentPage, setCurrentPage] = useState(0);
+    const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage, setItemsPerPage] = useState(10);
 
+    // All Data Loading
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/products')
+    //         .then(res => res.json())
+    //         .then(data => setProducts(data))
+    // }, []);
+
+    // Partial Data Loading
     useEffect(() => {
-        fetch('http://localhost:5000/products')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, []);
+        async function fetchData () {
+            const response = await fetch(`http://localhost:5000/products?page=${currentPage}&limit=${itemsPerPage}`);
+            const data = await response.json();
+            setProducts(data);
+        }
+        fetchData();
+    }, [currentPage, itemsPerPage])
 
     useEffect(() => {
         const storedCart = getShoppingCart();
@@ -49,28 +60,26 @@ const Shop = () => {
 
     // Pagination Calculation
     const totalProducts = products.length;
-    // const itemsPerPage = 10; //ToDo: Make dynamic
+    // const itemsPerPage = 10; //Make dynamic
     const totalPages = Math.ceil(totalProducts / itemsPerPage);
 
     // Dynamic Items Per Page
-    const options = [5, 10, 15, 20];
+    const options = [6, 12, 18, 28];
     const handleSelectChange = (event) => {
         setItemsPerPage(parseInt(event.target.value));
-        setCurrentPage(0);
+        setCurrentPage(1);
     }
 
 
     // Method: 1
-    // const pageNumber = [];
-    // for (let i = 1; i <= totalPages; i++) {
-    //     pageNumber.push(i);
-    // }
+    const pageNumbers = [];
+    for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(i);
+    }
     // console.log(pageNumber);
 
     // Method: 2
-    const pageNumbers = [...Array(totalPages).keys()];
-
-
+    // const pageNumbers = [...Array(totalPages).keys()];
 
     return (
         <div className='shop'>
