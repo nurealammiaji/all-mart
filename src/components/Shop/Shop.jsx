@@ -16,21 +16,21 @@ const Shop = () => {
 
     // All Data Loading
     // useEffect(() => {
-    //     fetch('http://localhost:5000/products')
+    //     fetch('https://all-mart-server.vercel.app/products')
     //         .then(res => res.json())
     //         .then(data => setProducts(data))
     // }, []);
 
     useEffect(() => {
-        fetch('http://localhost:5000/totalProducts')
-        .then(res => res.json())
-        .then(data => setTotalProducts(data.total));
+        fetch('https://all-mart-server.vercel.app/totalProducts')
+            .then(res => res.json())
+            .then(data => setTotalProducts(data.total));
     }, [])
 
     // Partial Data Loading
     useEffect(() => {
-        async function fetchData () {
-            const response = await fetch(`http://localhost:5000/products?page=${currentPage}&limit=${itemsPerPage}`);
+        async function fetchData() {
+            const response = await fetch(`https://all-mart-server.vercel.app/products?page=${currentPage}&limit=${itemsPerPage}`);
             const data = await response.json();
             setProducts(data);
         }
