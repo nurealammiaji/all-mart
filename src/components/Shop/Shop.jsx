@@ -10,8 +10,9 @@ const Shop = () => {
 
     const [products, setProducts] = useState([]);
     const [items, setItems] = useState([]);
+    const [totalProducts, setTotalProducts] = useState();
     const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage, setItemsPerPage] = useState(10);
+    const [itemsPerPage, setItemsPerPage] = useState(9);
 
     // All Data Loading
     // useEffect(() => {
@@ -19,6 +20,12 @@ const Shop = () => {
     //         .then(res => res.json())
     //         .then(data => setProducts(data))
     // }, []);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/totalProducts')
+        .then(res => res.json())
+        .then(data => setTotalProducts(data.total));
+    }, [])
 
     // Partial Data Loading
     useEffect(() => {
@@ -59,12 +66,11 @@ const Shop = () => {
     }
 
     // Pagination Calculation
-    const totalProducts = products.length;
     // const itemsPerPage = 10; //Make dynamic
     const totalPages = Math.ceil(totalProducts / itemsPerPage);
 
     // Dynamic Items Per Page
-    const options = [6, 12, 18, 28];
+    const options = [6, 12, 21, 30];
     const handleSelectChange = (event) => {
         setItemsPerPage(parseInt(event.target.value));
         setCurrentPage(1);
